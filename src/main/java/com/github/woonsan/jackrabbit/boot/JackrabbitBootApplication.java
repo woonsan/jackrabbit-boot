@@ -52,13 +52,10 @@ public class JackrabbitBootApplication {
         regBean.setLoadOnStartup(1);
 
         // If system property set (e.g, -Drepository.home=jackrabbit-repository),
-        // then ensure the directory to be created and set the absolute path to the init param.
+        // then set the absolute path to the init param.
         final String repositoryHome = System.getProperty(PROP_REPOSITORY_HOME, "jackrabbit-repository");
         if (repositoryHome != null && repositoryHome.length() != 0) {
             final File dir = new File(repositoryHome);
-            if (!dir.isDirectory()) {
-                dir.mkdirs();
-            }
             regBean.addInitParameter(PROP_REPOSITORY_HOME, dir.getAbsolutePath());
         }
 
