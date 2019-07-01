@@ -16,6 +16,8 @@
  */
 package com.github.woonsan.jackrabbit.boot;
 
+import java.io.File;
+
 import javax.jcr.Repository;
 
 import org.apache.jackrabbit.core.RepositoryContext;
@@ -36,6 +38,9 @@ public class JackrabbitBootApplication {
 
     private static Logger log = LoggerFactory.getLogger(JackrabbitBootApplication.class);
 
+    private static final String PROP_REPOSITORY_HOME = "repository.home";
+    private static final String PROP_REPOSITORY_CONFIG = "repository.config";
+
     public static void main(String[] args) {
         SpringApplication.run(JackrabbitBootApplication.class, args);
     }
@@ -44,10 +49,24 @@ public class JackrabbitBootApplication {
     public ServletRegistrationBean<JackrabbitRepositoryServlet> repositoryServlet() {
         final JackrabbitRepositoryServlet servlet = new JackrabbitRepositoryServlet();
         final ServletRegistrationBean<JackrabbitRepositoryServlet> regBean = new ServletRegistrationBean<>(servlet);
-
         regBean.setLoadOnStartup(1);
-        regBean.addInitParameter("repository.home", "target/jackrabbit-boot-repository");
-        regBean.addInitParameter("repository.config", "target/jackrabbit-boot-repository/repository.xml");
+
+        // If system property set (e.g, -Drepository.home=jackrabbit-repository),
+        // then ensure the directory to be created and set the absolute path to the init param.
+        final String repositoryHome = System.getProperty(PROP_REPOSITORY_HOME, "jackrabbit-repository");
+        if (repositoryHome != null && repositoryHome.length() != 0) {
+            final File dir = new File(repositoryHome);
+            if (!dir.isDirectory()) {
+                dir.mkdirs();
+            }
+            regBean.addInitParameter(PROP_REPOSITORY_HOME, dir.getAbsolutePath());
+        }
+
+        // If system property set (e.g, -Drepository.config=repository.xml), add it to init params.
+        final String repositoryConfig = System.getProperty(PROP_REPOSITORY_CONFIG);
+        if (repositoryConfig != null && repositoryConfig.length() != 0) {
+            regBean.addInitParameter(PROP_REPOSITORY_CONFIG, repositoryConfig);
+        }
 
         return regBean;
     }

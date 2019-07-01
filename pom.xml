@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
@@ -16,7 +15,6 @@
    See the License for the specific language governing permissions and
    limitations under the License.
   -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -43,6 +41,7 @@
     <jackrabbit.version>2.18.2</jackrabbit.version>
     <aws-java-sdk-s3.version>1.11.569</aws-java-sdk-s3.version>
     <jcraft-jsch.version>0.1.55</jcraft-jsch.version>
+    <h2.version>1.4.199</h2.version>
 
   </properties>
 
@@ -103,6 +102,12 @@
       <artifactId>jsch</artifactId>
       <version>${jcraft-jsch.version}</version>
       <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>${h2.version}</version>
     </dependency>
 
     <dependency>
