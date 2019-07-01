@@ -6,17 +6,27 @@ Apache Jackrabbit Boot project
 
 This project is yet under the construction.
 
-## How to run
-
-Run it with `spring-boot:run`:
+## How to build
 
 ```
-mvn spring-boot:run
+mvn clean package
+```
+
+## How to run
+
+For example,
+
+```
+java \
+    -Drepository.home=target/jackrabbit-repository \
+    -Drepository.config=conf/simple-repository.xml \
+    -jar target/jackrabbit-boot-0.0.1-SNAPSHOT.jar
 ```
 
 ## JCR over WebDAV access
 
 The JCR over WebDAV Server Servlet becomes accessible through `http://localhost:8080/server`.
+
 For example,
 
 ```
@@ -26,10 +36,11 @@ curl --user admin:admin http://localhost:8080/server/default/jcr:root
 ## Other Services
 
 The Statistics Servlet becomes accessible through `http://localhost:8080/statistics`.
+
 For example,
 
 ```
-curl -i http://localhost:8080/statistics
+curl http://localhost:8080/statistics
 ```
 
 ## References
