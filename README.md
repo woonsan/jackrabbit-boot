@@ -5,7 +5,7 @@ Repository with JCR over WebDAV servlet for both JCR clients and Web Remoting cl
 
 ## How to build
 
-```
+```bash
 mvn clean package
 ```
 
@@ -13,7 +13,7 @@ mvn clean package
 
 For example,
 
-```
+```bash
 java \
     -Drepository.home=target/jackrabbit-repository \
     -Drepository.config=conf/simple-repository.xml \
@@ -29,7 +29,7 @@ Note:
 
 With remote debugging:
 
-```
+```bash
 java \
     -Drepository.home=target/jackrabbit-repository \
     -Drepository.config=conf/simple-repository.xml \
@@ -44,7 +44,7 @@ The JCR over WebDAV Server Servlet becomes accessible through `http://localhost:
 
 For example,
 
-```
+```bash
 curl -i --user admin:admin http://localhost:8080/server/default/jcr:root
 ```
 
@@ -54,7 +54,7 @@ The Statistics Servlet becomes accessible through `http://localhost:8080/statist
 
 For example,
 
-```
+```bash
 curl -i http://localhost:8080/statistics
 ```
 
