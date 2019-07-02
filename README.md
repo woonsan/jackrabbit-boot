@@ -1,10 +1,7 @@
 # jackrabbit-boot
 
-Apache Jackrabbit Boot project
-
-## Work in progress!
-
-This project is yet under the construction.
+Apache Jackrabbit Boot project: Spring Boot based, simple executable web application running Apache Jackrabbit
+Repository with JCR over WebDAV servlet for both JCR clients and Web Remoting clients.
 
 ## How to build
 
