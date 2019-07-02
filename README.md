@@ -23,8 +23,10 @@ java \
 
 Note:
 - If `repository.home` system property is missing, `./jackrabbit-repository` will be used by default.
-- If `repository.config` system property is missing, a default `repository.xml` will be copied to the `repository.home` directory.
+- If `repository.config` system property is missing, `repository.xml` under the `repository.home` directory is used.
+  If not existing, a `repository.xml` is copied to the directory with default settings.
 - The `-Dloader.path` system property is optional. If provided, all the jar files in the directory will be loaded.
+  e.g, JDBC driver jar files.
 
 
 With remote debugging:
