@@ -23,6 +23,16 @@ java \
     -jar target/jackrabbit-boot-0.0.1-SNAPSHOT.jar
 ```
 
+Or with remote debugging,
+
+```
+java \
+    -Drepository.home=target/jackrabbit-repository \
+    -Drepository.config=conf/simple-repository.xml \
+    -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n \
+    -jar target/jackrabbit-boot-0.0.1-SNAPSHOT.jar
+```
+
 ## JCR over WebDAV access
 
 The JCR over WebDAV Server Servlet becomes accessible through `http://localhost:8080/server`.
@@ -30,7 +40,7 @@ The JCR over WebDAV Server Servlet becomes accessible through `http://localhost:
 For example,
 
 ```
-curl --user admin:admin http://localhost:8080/server/default/jcr:root
+curl -i --user admin:admin http://localhost:8080/server/default/jcr:root
 ```
 
 ## Other Services
@@ -40,7 +50,7 @@ The Statistics Servlet becomes accessible through `http://localhost:8080/statist
 For example,
 
 ```
-curl http://localhost:8080/statistics
+curl -i http://localhost:8080/statistics
 ```
 
 ## References

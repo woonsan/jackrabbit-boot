@@ -24,6 +24,7 @@ import org.apache.jackrabbit.core.RepositoryContext;
 import org.apache.jackrabbit.server.remoting.davex.JcrRemotingServlet;
 import org.apache.jackrabbit.servlet.jackrabbit.JackrabbitRepositoryServlet;
 import org.apache.jackrabbit.servlet.jackrabbit.StatisticsServlet;
+import org.apache.jackrabbit.webdav.jcr.JCRWebdavServerServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -89,6 +90,8 @@ public class JackrabbitBootApplication {
         };
 
         final ServletRegistrationBean<JcrRemotingServlet> regBean = new ServletRegistrationBean<>(servlet, "/server/*");
+        regBean.addInitParameter(JCRWebdavServerServlet.INIT_PARAM_RESOURCE_PATH_PREFIX, "/server");
+
         return regBean;
     }
 
