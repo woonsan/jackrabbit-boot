@@ -20,15 +20,23 @@ For example,
 java \
     -Drepository.home=target/jackrabbit-repository \
     -Drepository.config=conf/simple-repository.xml \
+    -Dloader.path=lib/ \
     -jar target/jackrabbit-boot-0.0.1-SNAPSHOT.jar
 ```
 
-Or with remote debugging,
+Note:
+- If `repository.home` system property is missing, `./jackrabbit-repository` will be used by default.
+- If `repository.config` system property is missing, a default `repository.xml` will be copied to the `repository.home` directory.
+- The `-Dloader.path` system property is optional. If provided, all the jar files in the directory will be loaded.
+
+
+With remote debugging:
 
 ```
 java \
     -Drepository.home=target/jackrabbit-repository \
     -Drepository.config=conf/simple-repository.xml \
+    -Dloader.path=lib/ \
     -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n \
     -jar target/jackrabbit-boot-0.0.1-SNAPSHOT.jar
 ```
