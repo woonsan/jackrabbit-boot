@@ -29,7 +29,7 @@
 
   <groupId>com.github.woonsan</groupId>
   <artifactId>jackrabbit-boot</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <name>jackrabbit-boot</name>
   <description>Apache Jackrabbit Boot</description>
 
@@ -38,7 +38,7 @@
     <java.version>1.8</java.version>
 
     <javax.jcr.version>2.0</javax.jcr.version>
-    <jackrabbit.version>2.18.2</jackrabbit.version>
+    <jackrabbit.version>2.19.5</jackrabbit.version>
     <aws-java-sdk-s3.version>1.11.569</aws-java-sdk-s3.version>
     <jcraft-jsch.version>0.1.55</jcraft-jsch.version>
     <h2.version>1.4.199</h2.version>
