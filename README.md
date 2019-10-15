@@ -18,7 +18,7 @@ java \
     -Drepository.home=target/jackrabbit-repository \
     -Drepository.config=conf/simple-repository.xml \
     -Dloader.path=lib/ \
-    -jar target/jackrabbit-boot-0.0.1-SNAPSHOT.jar
+    -jar target/jackrabbit-boot-0.1.0-SNAPSHOT.jar
 ```
 
 Note:
@@ -37,7 +37,7 @@ java \
     -Drepository.config=conf/simple-repository.xml \
     -Dloader.path=lib/ \
     -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n \
-    -jar target/jackrabbit-boot-0.0.1-SNAPSHOT.jar
+    -jar target/jackrabbit-boot-0.1.0-SNAPSHOT.jar
 ```
 
 ## JCR over WebDAV access
