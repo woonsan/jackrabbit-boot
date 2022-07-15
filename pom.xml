@@ -39,7 +39,7 @@
 
     <javax.jcr.version>2.0</javax.jcr.version>
     <jackrabbit.version>2.19.5</jackrabbit.version>
-    <aws-java-sdk-s3.version>1.11.569</aws-java-sdk-s3.version>
+    <aws-java-sdk-s3.version>1.12.261</aws-java-sdk-s3.version>
     <jcraft-jsch.version>0.1.55</jcraft-jsch.version>
     <h2.version>1.4.199</h2.version>
 
